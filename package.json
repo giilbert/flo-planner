@@ -1,0 +1,28 @@
+{
+    "name": "flo-planner",
+    "version": "1.0.0",
+    "description": "a planner",
+    "main": "index.js",
+    "scripts": {
+        "start": "npx babel --watch src --out-dir public --presets react-app/prod",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/giilbert/flo-planner.git"
+    },
+    "keywords": [
+        "react",
+        "planner"
+    ],
+    "author": "giilbert",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/giilbert/flo-planner/issues"
+    },
+    "homepage": "https://github.com/giilbert/flo-planner#readme",
+    "dependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-preset-react-app": "^3.1.2"
+    }
+}
