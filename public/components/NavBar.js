@@ -6,54 +6,57 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import Navbar from './components/Navbar.js';
+var Navbar = function (_React$Component) {
+    _inherits(Navbar, _React$Component);
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+    function Navbar(props) {
+        _classCallCheck(this, Navbar);
 
-    function App() {
-        _classCallCheck(this, App);
+        var _this = _possibleConstructorReturn(this, (Navbar.__proto__ || Object.getPrototypeOf(Navbar)).call(this, props));
 
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
-
-        _this.state = {
-            page: 0 // 0 dashboard, 1 calendar, 2 upcoming events
-        };
-
-        _this.changePage = _this.changePage.bind(_this);
+        _this.onClick = _this.onClick.bind(_this);
         return _this;
     }
 
-    _createClass(App, [{
-        key: 'changePage',
-        value: function changePage(x) {
-            if (x <= 2 && x >= 0) {
-                this.setState({
-                    page: x
-                });
-            } else {
-                this.setState({
-                    page: 0
-                });
-            }
+    _createClass(Navbar, [{
+        key: "onClick",
+        value: function onClick(e) {
+            this.props.changePage(e);
         }
     }, {
-        key: 'render',
+        key: "render",
         value: function render() {
+            var _this2 = this;
+
             return React.createElement(
-                'div',
-                null,
-                React.createElement(Navbar, { changePage: this.changePage }),
+                "div",
+                { className: "Navbar" },
                 React.createElement(
-                    'h1',
-                    null,
-                    'hello'
+                    "p",
+                    { className: "pointer", onClick: function onClick() {
+                            return _this2.onClick(0);
+                        } },
+                    "Dashboard"
+                ),
+                React.createElement(
+                    "p",
+                    { className: "pointer", onClick: function onClick() {
+                            return _this2.onClick(1);
+                        } },
+                    "Calendar"
+                ),
+                React.createElement(
+                    "p",
+                    { className: "pointer", onClick: function onClick() {
+                            return _this2.onClick(2);
+                        } },
+                    "Events"
                 )
             );
         }
     }]);
 
-    return App;
+    return Navbar;
 }(React.Component);
 
-export default App;
+export default Navbar;
