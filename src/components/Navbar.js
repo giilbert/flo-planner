@@ -1,3 +1,7 @@
+import React from 'react';
+
+import '../css/Navbar.css';
+
 export default class Navbar extends React.Component {
     constructor(props) {
         super(props);
