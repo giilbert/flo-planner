@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Logo from '../res/flologo.png';
+
 import '../css/Navbar.css';
 
 export default class Navbar extends React.Component {
@@ -17,10 +19,16 @@ export default class Navbar extends React.Component {
 
     render() {
         return (
-            <div className="Navbar">
-                <p className="pointer" onClick={() => this.onClick(0)}>Dashboard</p>
-                <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>
-                <p className="pointer" onClick={() => this.onClick(2)}>Events</p>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'row'
+            }}>
+                <img src={Logo} width="76px" height="40px" className="logo"/>
+                <div className="Navbar">
+                    <p className="pointer" onClick={() => this.onClick(0)}>Dashboard</p>
+                    <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>
+                    <p className="pointer" onClick={() => this.onClick(2)}>Events</p>
+                </div>
             </div>
         )
     }

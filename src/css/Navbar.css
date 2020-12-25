@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: row;
     border-radius: 4px;
-    margin: 10px 10px 0px 10px;
+    margin: 10px 10px 0px 0px;
 }
 
 .Navbar p {
@@ -23,11 +23,11 @@
     display: none;
 }
 
-#nav-open-button {
-    font-size: 24px;
-    display: none;
+.logo {
+    margin: 10px 10px 0px 10px;
+    padding: 10px;
     background-color: var(--theme-blue);
-    text-align: center;
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 600px) {
@@ -44,5 +44,14 @@
 
     #nav-open-button {
         display: block;
+    }
+
+    .logo {
+        width: 60px;
+        height: 30px;
+        border-radius: 0px;
+        margin: 0px;
+        padding: 5px;
+        padding-left: 20px;
     }
 }
