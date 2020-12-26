@@ -1,0 +1,27 @@
+.time-display {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 10px;
+    margin: 10px 10px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--theme-blue);
+    border-radius: 4px;
+    height: 40px;
+    width: 300px;
+}
+
+@media screen and (max-width: 900px) {
+    .time-display {
+        position: relative;
+        width: calc(100% - 20px);
+        height: 60px;
+        margin: 10px;
+    }
+
+    .time-display p {
+        font-size: calc(2vw + 2vh);
+    }
+}

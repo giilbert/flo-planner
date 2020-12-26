@@ -19,10 +19,6 @@
     font-size: 20px;
 }
 
-.Navbar #x {
-    display: none;
-}
-
 .logo {
     margin: 10px 10px 0px 10px;
     padding: 10px;
@@ -30,10 +26,10 @@
     border-radius: 4px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .Navbar {
         margin: 0;
-        width: 100vw;
+        width: calc(100vw - 70px);
         border-radius: 0px;
         flex-direction: row;
     }
@@ -47,11 +43,11 @@
     }
 
     .logo {
-        width: 60px;
-        height: 30px;
+        width: 40px;
+        height: 20px;
         border-radius: 0px;
         margin: 0px;
-        padding: 5px;
+        padding: 10px;
         padding-left: 20px;
     }
 }

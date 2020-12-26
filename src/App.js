@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Navbar from './components/Navbar.js';
+import Time from './components/Time.js';
 
 import './css/index.css';
 
@@ -32,7 +33,10 @@ export default class App extends React.Component {
         return (
             <div>
                 <Navbar changePage={this.changePage} />
-                <h1>hello</h1>
+                <Time />
+                <h1>page: {
+                ['dashboard', 'calendar', 'upcoming events'][this.state.page]
+                }</h1>
             </div>
         )
     }

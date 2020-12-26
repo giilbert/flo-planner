@@ -23,7 +23,7 @@ export default class Navbar extends React.Component {
                 display: 'flex',
                 flexDirection: 'row'
             }}>
-                <img src={Logo} width="76px" height="40px" className="logo"/>
+                <img src={Logo} width="74px" height="40px" className="logo"/>
                 <div className="Navbar">
                     <p className="pointer" onClick={() => this.onClick(0)}>Dashboard</p>
                     <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>
