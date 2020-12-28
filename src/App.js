@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.js';
 import Time from './components/Time.js';
 
 import './css/index.css';
+import Dashboard from './pages/Dashboard.js';
 
 export default class App extends React.Component {
 
@@ -22,10 +23,6 @@ export default class App extends React.Component {
             this.setState({
                 page: x
             })
-        } else {
-            this.setState({
-                page: 0
-            })
         }
     }
 
@@ -34,9 +31,9 @@ export default class App extends React.Component {
             <div>
                 <Navbar changePage={this.changePage} />
                 <Time />
-                <h1>page: {
-                ['dashboard', 'calendar', 'upcoming events'][this.state.page]
-                }</h1>
+                {
+                    [<Dashboard />, 'calendar', 'events'][this.state.page]
+                }
             </div>
         )
     }

@@ -1,0 +1,19 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-container {
+    width: 250px;
+    height: calc(100vh - 80px - 10px); /* ... , navbar , bottom-margin */
+    min-height: 300px;
+    background-color: var(--theme-blue);
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 900px) {
+    .left-container {
+        width: calc(100% - 20px); /* ... , margin */
+        height: 400px;
+    }
+}

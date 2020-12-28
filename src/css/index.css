@@ -14,11 +14,45 @@ html,
 body {
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: row;
 }
 
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555a;
+}
+
 .pointer {
     cursor: pointer;
+}
+
+.main {
+    width: 100%;
+    height: calc(100vh - 70px - 10px); /* ... , navbar , top-margin */
+    margin: 10px;
+}
+
+
+@media screen and (max-width: 900px) {
+    .main {
+        height: 90vh;
+    }
 }
