@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.js';
 import Time from './components/Time.js';
 
 import './css/index.css';
+import './css/fonts.css';
 import Dashboard from './pages/Dashboard.js';
 
 export default class App extends React.Component {
