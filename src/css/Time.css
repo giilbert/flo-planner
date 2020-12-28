@@ -13,7 +13,7 @@
     width: 300px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     .time-display {
         position: relative;
         width: calc(100% - 20px);

@@ -5,7 +5,7 @@
 
 .left-container {
     width: 250px;
-    height: calc(100vh - 80px - 10px); /* ... , navbar , bottom-margin */
+    height: calc(100vh - 80px - 10px - 10px - 10px); /* ... , navbar , bottom margin , middle margin , top margin*/
     min-height: 300px;
     background-color: var(--theme-blue);
     border-radius: 4px;
@@ -14,7 +14,7 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
     .left-container {
         width: calc(100% - 20px); /* ... , margin */
         height: 400px;
