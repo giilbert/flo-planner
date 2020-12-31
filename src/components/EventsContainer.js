@@ -2,28 +2,36 @@ import React from 'react';
 
 import Event from './Event';
 
+import { getAllEvents } from '../utils/events';
+
 import '../css/Event.css';
 
 export default class EventsContainer extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {events: []}
+        // sort events
+        /**
+         * @type {Array}
+         */
+        let sorted = getAllEvents();
+        sorted = sorted.sort((a, b) => {
+            if (a.timestamp > b.timestamp) {
+                return -1;
+            } else if (b.timestamp > a.timestamp) {
+                return 1;
+            } else {
+                return 0;
+            }
+        })
+
+        this.state = { events: sorted }
         this.props = props;
     }
 
     componentDidMount() {
-        let a = [];
-
-        for (let i = 0; i < 10; i++)
-            a.push({
-                title: 'big title text',
-                description: 'small description text'
-            })
-
-        this.setState({
-            events: a
-        })
+        console.log(this.state.events)
+        this.forceUpdate()
     }
 
     render() {
@@ -33,7 +41,7 @@ export default class EventsContainer extends React.Component {
 
                 <div className="events-container">
                     {this.state.events.map((v, i) => {
-                        return <Event title={v.title} description={v.description} key={i} />
+                        return <Event data={v} key={i} />
                     })}
                 </div>
             </div>
