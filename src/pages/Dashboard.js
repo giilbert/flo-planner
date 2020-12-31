@@ -1,5 +1,7 @@
 import React from 'react';
 
+import EventsContainer from '../components/EventsContainer';
+
 import '../css/Dashboard.css'
 
 export default class Dashboard extends React.Component {
@@ -10,12 +12,9 @@ export default class Dashboard extends React.Component {
     render() {
         return (
             <div className="main dashboard">
-                <div className="left-container">
-                    <h1>Events</h1>
-                </div>
-
+                <EventsContainer />
                 <table>
-                    
+
                 </table>
             </div>
         )
