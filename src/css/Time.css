@@ -21,7 +21,7 @@
         margin: 10px;
     }
 
-    .time-display p {
+    .time-display h4 {
         font-size: calc(2vw + 2vh);
     }
 }
