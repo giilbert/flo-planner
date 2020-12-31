@@ -35,7 +35,7 @@ export default class Time extends React.Component {
     render() {
         return (
             <div className="time-display">
-                <p>{this.state.date}</p>
+                <h4>{this.state.date}</h4>
             </div>
         )
     }
