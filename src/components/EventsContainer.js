@@ -17,9 +17,9 @@ export default class EventsContainer extends React.Component {
         let sorted = getAllEvents();
         sorted = sorted.sort((a, b) => {
             if (a.timestamp > b.timestamp) {
-                return -1;
-            } else if (b.timestamp > a.timestamp) {
                 return 1;
+            } else if (b.timestamp > a.timestamp) {
+                return -1;
             } else {
                 return 0;
             }
@@ -30,7 +30,6 @@ export default class EventsContainer extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.state.events)
         this.forceUpdate()
     }
 
