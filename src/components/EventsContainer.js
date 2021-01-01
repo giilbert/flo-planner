@@ -2,7 +2,7 @@ import React from 'react';
 
 import Event from './Event';
 
-import { getAllEvents } from '../utils/events';
+import { events, addEventUpdateListener } from '../utils/events';
 
 import '../css/Event.css';
 
@@ -11,10 +11,18 @@ export default class EventsContainer extends React.Component {
         super(props);
 
         // sort events
-        /**
-         * @type {Array}
-         */
-        let sorted = getAllEvents();
+        this.updateEvents()
+
+        this.props = props;
+
+        addEventUpdateListener(() => {
+            this.updateEvents();
+            this.forceUpdate();
+        })
+    }
+
+    updateEvents() {
+        let sorted = events;
         sorted = sorted.sort((a, b) => {
             if (a.timestamp > b.timestamp) {
                 return 1;
@@ -26,11 +34,10 @@ export default class EventsContainer extends React.Component {
         })
 
         this.state = { events: sorted }
-        this.props = props;
     }
 
     componentDidMount() {
-        this.forceUpdate()
+        this.forceUpdate();
     }
 
     render() {

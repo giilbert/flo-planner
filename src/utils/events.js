@@ -1,4 +1,8 @@
+/**
+ * @type { Array }
+ */
 let events = getAllEvents();
+
 
 function getAllEvents() {
     let data = localStorage.getItem('events')
@@ -21,16 +25,53 @@ function addEvent(data) {
             data: events
         }
     ))
+    
+    listeners.forEach(v => {
+        v()
+    })
 }
+
+/**
+ * @param { number } id id of the event
+ */
+function removeEvent(id) {
+    let eventIndex = events.findIndex(e => e.id === id);
+    if (eventIndex === -1) throw new Error(`event with id ${id} does not exist!`);
+    
+    events.splice(eventIndex, 1);
+
+    // update in LS
+    localStorage.setItem('events', JSON.stringify(
+        {
+            data: events
+        }
+    ))
+    
+    listeners.forEach(v => {
+        v()
+    })
+}
+
+
+let listeners = [];
+function addEventUpdateListener(callback) {
+    listeners.push(callback)
+}
+
+
 
 window.a = {
     events,
     getAllEvents,
-    addEvent
+    addEvent,
+    removeEvent,
+    addEventUpdateListener
 }
 
 export {
     events,
     getAllEvents,
-    addEvent
+    addEvent,
+    removeEvent,
+    addEventUpdateListener
 }
