@@ -6,6 +6,7 @@
     "scripts": {
         "start": "npx parcel serve src/index.html --open",
         "build": "npx parcel build src/index.html --out-dir prod --no-source-maps",
+        "deploy": "verce --prod",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
