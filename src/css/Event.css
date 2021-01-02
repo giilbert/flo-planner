@@ -20,7 +20,9 @@
 }
 
 .event-context-menu {
-    margin-top: 10px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -41,9 +43,9 @@
 
 @media screen and (max-width: 800px) {
     .event-context-menu * {
-        width: calc(33% - 40px);
+        width: calc(33% - 40px); /* adjust for margin padding and stuff */
         max-width: unset;
-        height: 50px;
+        height: calc(100% - 40px); /* adjust for margin padding and stuff */
         text-align: center;
         background-color: blue;
         padding: 10px;
