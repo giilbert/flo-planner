@@ -19,6 +19,10 @@
     top: -5px;
 }
 
+.event p, .event h1{
+    overflow-wrap: break-word;
+}
+
 .event-context-menu {
     position: absolute;
     left: 0px;
@@ -32,22 +36,38 @@
 
 .event-context-menu * {
     width: 33%;
-    max-width: 50px;
-    height: 50px;
+    height: calc(100% - 30px);
     text-align: center;
-    background-color: red;
     padding: 5px;
     margin: 10px;
     border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-context-menu * * {
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu-button {
+    padding-top: 5px;
 }
 
 @media screen and (max-width: 800px) {
     .event-context-menu * {
-        width: calc(33% - 40px); /* adjust for margin padding and stuff */
+        width: calc(33% - 30px); /* adjust for margin padding and stuff */
         max-width: unset;
         height: calc(100% - 40px); /* adjust for margin padding and stuff */
         text-align: center;
-        background-color: blue;
         padding: 10px;
+    }
+    
+    .event-context-menu * svg {
+        width: 40px;
+        height: 40px;
+        padding: 0px;
     }
 }

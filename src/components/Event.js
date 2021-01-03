@@ -1,6 +1,7 @@
 import React from 'react';
-
 import '../css/Event.css';
+
+import DeleteButtonSVG from '../res/svg/DeleteButtonSVG'
 
 export default class Event extends React.Component {
     constructor(props) {
@@ -35,6 +36,11 @@ export default class Event extends React.Component {
 
     componentDidMount() {
         window.addEventListener('click', e => {
+
+            if (e.target.parentElement.classList.contains('wd-context-menu')) {
+                return;
+            }
+
             if (!(e.target.classList.contains('wd-context-menu'))) { // wont disable context menu
                 this.removeContextMenu();
             }
@@ -63,9 +69,8 @@ export default class Event extends React.Component {
                 })}</p>
                 
                 <div className="event-context-menu wd-context-menu" style={style} ref={this.contextMenu}>
-                    <div className="wd-context-menu">A</div>
+                    <DeleteButtonSVG />
                     <div className="wd-context-menu">B</div>
-                    <div className="wd-context-menu">C</div>
                 </div> 
             </div>
         )
