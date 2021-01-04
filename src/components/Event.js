@@ -1,7 +1,8 @@
 import React from 'react';
 import '../css/Event.css';
 
-import DeleteButtonSVG from '../res/svg/DeleteButtonSVG'
+import DeleteButton from './DeleteButton'
+import EditButton from './EditButton'
 
 export default class Event extends React.Component {
     constructor(props) {
@@ -69,8 +70,10 @@ export default class Event extends React.Component {
                 })}</p>
                 
                 <div className="event-context-menu wd-context-menu" style={style} ref={this.contextMenu}>
-                    <DeleteButtonSVG />
-                    <div className="wd-context-menu">B</div>
+                    <>
+                        <DeleteButton />
+                        <EditButton />
+                    </>
                 </div> 
             </div>
         )
