@@ -47,7 +47,11 @@ export default class EventsContainer extends React.Component {
 
                 <div className="events-container">
                     {this.state.events.map((v, i) => {
-                        return <Event data={v} key={i} />
+                        return <Event 
+                            data={v} 
+                            key={i}
+                            tags={v.tags || null}
+                        />
                     })}
                 </div>
             </div>

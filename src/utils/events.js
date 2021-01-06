@@ -13,10 +13,11 @@ function getAllEvents() {
 }
 
 /**
- * @param { Object } data
- * @param { string } data.title title of the event
- * @param { string } data.description description of the event
- * @param { number } data.timestamp timestamp of the event
+ * @param { Object }        data
+ * @param { string }        data.title title of the event
+ * @param { string }        data.description description of the event
+ * @param { number }        data.timestamp timestamp of the event
+ * @param { Array<object> } data.tags
  */
 function addEvent(data) {
     events.push(data)
@@ -30,6 +31,27 @@ function addEvent(data) {
         v()
     })
 }
+
+/* example:
+
+a.addEvent({
+    title: 'title asdf',
+    description: 'description blah blah',
+    id: 1,
+    timestamp: Date.now() + 100000000,
+    tags: [
+        {
+            name: 'blue tag',
+            color: 'blue'
+        },
+        {
+            name: 'red tag',
+            color: 'red'
+        }
+    ]
+})
+
+ */
 
 /**
  * @param { number } id id of the event

@@ -1,8 +1,11 @@
 import React from 'react';
 import '../css/Event.css';
 
-import DeleteButton from './DeleteButton'
-import EditButton from './EditButton'
+import DeleteButton from './DeleteButton';
+import EditButton from './EditButton';
+
+import EventLabel from './EventLabel';
+
 
 export default class Event extends React.Component {
     constructor(props) {
@@ -60,12 +63,21 @@ export default class Event extends React.Component {
             style.display = 'none'
         }
 
+        let tags = this.props.tags || []
+
         return (
             <div className="event wd-context-menu" onContextMenu={this.handleRightClick}>
 
                 <h3>{this.data.title}</h3>
+
+                <EventLabel colors={tags} />
+                
+                <hr className="separator" />
+
                 <p>{this.data.description}</p>
-                <p>#{this.data.id} - {new Date(this.data.timestamp).toLocaleString('en-us', {
+                <p
+                    style={{color: '#111b'}}
+                >#{this.data.id} - {new Date(this.data.timestamp).toLocaleString('en-us', {
                     hour12: true
                 })}</p>
                 

@@ -56,6 +56,21 @@
     padding-top: 5px;
 }
 
+.separator {
+    font-size: 24px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #111a;
+    margin: 10px 0px 10px 0px;
+}
+
+.event-label {
+    height: 20px;
+    margin-right: 2px;
+    padding: 2px 5px 2px 5px;
+    border-radius: 4px;
+}
+
 @media screen and (max-width: 800px) {
     .event-context-menu * {
         width: calc(33% - 30px); /* adjust for margin padding and stuff */
