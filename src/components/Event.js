@@ -39,8 +39,7 @@ export default class Event extends React.Component {
     }
 
     componentDidMount() {
-        window.addEventListener('click', e => {
-
+        this.onClick = e => {
             if (e.target.parentElement.classList.contains('wd-context-menu')) {
                 return;
             }
@@ -48,12 +47,20 @@ export default class Event extends React.Component {
             if (!(e.target.classList.contains('wd-context-menu'))) { // wont disable context menu
                 this.removeContextMenu();
             }
-        })
+        }
 
-        window.addEventListener('contextmenu', e => {
+        this.onContextMenu = e => {
             e.preventDefault();
             this.removeContextMenu();
-        })
+        }
+
+        window.addEventListener('contextmenu', this.onContextMenu)
+        window.addEventListener('click', this.onClick)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('contextmenu', this.onContextMenu);
+        window.removeEventListener('click', this.onClick);
     }
 
     render() {
