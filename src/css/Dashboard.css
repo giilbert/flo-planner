@@ -1,6 +1,6 @@
 .dashboard {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .left-container {
@@ -11,7 +11,6 @@
     border-radius: 4px;
     padding-top: 20px;
     text-align: center;
-
 }
 
 .events-container {
@@ -22,8 +21,19 @@
 }
 
 @media screen and (max-width: 800px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
     .left-container {
         width: calc(100% - 20px); /* ... , margin */
         height: 400px;
+    }
+}
+
+/* Mozilla support */
+@-moz-document url-prefix() {
+    .left-container {
+        min-width: 300px;
     }
 }
