@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Logo from '../res/flologo.png';
+import Time from './Time.js';
 
 import '../css/Navbar.css';
 
@@ -16,6 +17,12 @@ export default class Navbar extends React.Component {
         this.props.changePage(e)
     }
 
+    componentDidMount() {
+        window.addEventListener('resize', e => {
+            this.forceUpdate();
+        })
+    }
+
 
     render() {
         return (
@@ -29,6 +36,8 @@ export default class Navbar extends React.Component {
                     <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>
                     <p className="pointer" onClick={() => this.onClick(2)}>Events</p>
                 </div>
+
+                <Time />
             </div>
         )
     }

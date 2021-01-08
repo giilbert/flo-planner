@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Navbar from './components/Navbar.js';
-import Time from './components/Time.js';
+import Navbar from './components/Navbar';
+import Time from './components/Time';
 
 import './css/index.css';
 import './css/fonts.css';
-import Dashboard from './pages/Dashboard.js';
+import Dashboard from './pages/Dashboard';
 
 export default class App extends React.Component {
 
@@ -31,7 +31,7 @@ export default class App extends React.Component {
         return (
             <div>
                 <Navbar changePage={this.changePage} />
-                <Time />
+                <Time big={true} />
                 {
                     [<Dashboard />, 'calendar', 'events'][this.state.page]
                 }

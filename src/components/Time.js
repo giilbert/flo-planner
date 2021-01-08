@@ -3,8 +3,10 @@ import React from 'react';
 import '../css/Time.css';
 
 export default class Time extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
+
+        this.props = props;
 
         this.state = {
             date: ''
@@ -33,8 +35,10 @@ export default class Time extends React.Component {
     }
 
     render() {
+        let extraClassName = this.props.big == true ? ' big' : '';
+
         return (
-            <div className="time-display">
+            <div className={"time-display" + extraClassName}>
                 <h4>{this.state.date}</h4>
             </div>
         )
