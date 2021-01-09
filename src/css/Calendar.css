@@ -1,7 +1,7 @@
 .calendar {
     margin: 0px 20px 10px 10px;
     width: 100%;
-    height: auto;
+    height: calc(100% - 10px);
     min-height: 400px;
     background-color: #81c2fb;
     border-radius: 4px;
