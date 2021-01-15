@@ -1,15 +1,29 @@
 .calendar {
-    margin: 0px 20px 10px 10px;
+    margin: 0px 0px 0px 10px;
     width: 100%;
-    height: calc(100% - 10px);
+    height: auto;
     min-height: 400px;
-    background-color: #81c2fb;
+    background-color: var(--theme-blue);
     border-radius: 4px;
+}
+
+.calendar table {
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-row td {
+    vertical-align: top;
+    padding: 10px;
+}
+
+.calendar-row td:hover {
+    background-color: #0000000b;
 }
 
 @media screen and (max-width: 800px) {
     .calendar {
         margin: 10px 0px 0px 0px;
-        width: calc(100% - 20px);
+        width: auto;
     }
 }

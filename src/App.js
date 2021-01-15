@@ -29,13 +29,13 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <Navbar changePage={this.changePage} />
                 <Time big={true} />
                 {
                     [<Dashboard />, 'calendar', 'events'][this.state.page]
                 }
-            </div>
+            </>
         )
     }
 }

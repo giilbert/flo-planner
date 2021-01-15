@@ -7,7 +7,7 @@
     align-items: center;
     flex-direction: row;
     border-radius: 4px;
-    margin: 10px 10px 0px 0px;
+    margin-left: 10px;
 }
 
 .Navbar p {
@@ -20,7 +20,6 @@
 }
 
 .logo {
-    margin: 10px 10px 0px 10px;
     padding: 10px;
     background-color: var(--theme-blue);
     border-radius: 4px;
@@ -30,21 +29,19 @@
     .Navbar {
         margin: 0;
         width: calc(100vw - 70px);
+        position: absolute;
+        top: 0px;
+        left: 70px;
         border-radius: 0px;
         flex-direction: row;
-    }
-
-    .Navbar #x {
-        display: block;
-    }
-
-    #nav-open-button {
-        display: block;
     }
 
     .logo {
         width: 40px;
         height: 20px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
         border-radius: 0px;
         margin: 0px;
         padding: 10px;
