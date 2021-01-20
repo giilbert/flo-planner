@@ -18,7 +18,11 @@ body {
     flex-direction: row;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-family: 'Inter', sans-serif;
 }
 
@@ -30,19 +34,19 @@ h1, h2, h3, h4, h5 {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff0;
+    background: #fff0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888a;
+    background: #888a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555a;
+    background: #555a;
 }
 
 .pointer {
@@ -56,20 +60,18 @@ h1, h2, h3, h4, h5 {
     height: auto;
 }
 
-
 @media screen and (max-width: 800px) {
-    .main {
-        height: 90vh;
-    }
-
     #root {
         padding-top: 40px;
-        padding-bottom: 300px;
     }
 }
 
 @-moz-document url-prefix() {
-    h1, h2, h3, h4, h5 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
         font-family: sans-serif;
         font-weight: lighter;
     }

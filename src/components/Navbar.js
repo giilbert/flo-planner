@@ -17,20 +17,13 @@ export default class Navbar extends React.Component {
         this.props.changePage(e)
     }
 
-    componentDidMount() {
-        window.addEventListener('resize', e => {
-            this.forceUpdate();
-        })
-    }
-
-
     render() {
         return (
-            <div style={{
+            <div className="Navbar-container" style={{
                 display: 'flex',
                 flexDirection: 'row'
             }}>
-                <img src={Logo} width="74px" height="40px" className="logo"/>
+                <img src={Logo} width="37px" height="20px" className="logo" />
                 <div className="Navbar">
                     <p className="pointer" onClick={() => this.onClick(0)}>Dashboard</p>
                     <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>

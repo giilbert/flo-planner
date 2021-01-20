@@ -1,3 +1,13 @@
+.Navbar-container {
+    background-color: var(--theme-blue);
+    z-index: 999;
+    border-radius: 4px;
+}
+
+.Navbar-container .time-display {
+    z-index: 1;
+}
+
 .Navbar {
     background-color: var(--theme-blue);
     height: 40px;
@@ -6,7 +16,6 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    border-radius: 4px;
     margin-left: 10px;
 }
 

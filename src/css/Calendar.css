@@ -26,4 +26,8 @@
         margin: 10px 0px 0px 0px;
         width: auto;
     }
+
+    .calendar table {
+        height: 400px; /* change accordingly to calendar parent size */
+    }
 }

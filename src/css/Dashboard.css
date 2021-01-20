@@ -6,7 +6,9 @@
 .left-container {
     width: 300px;
     min-width: 300px;
-    height: calc(100vh - 80px - 10px - 10px - 10px); /* ... , navbar , bottom margin , middle margin , top margin*/
+    height: calc(
+        100vh - 55px - 10px - 10px - 10px
+    ); /* ... , navbar , bottom margin , middle margin , top margin*/
     min-height: calc(400px - 20px);
     background-color: var(--theme-blue);
     border-radius: 4px;
