@@ -5,9 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "npx parcel serve src/index.html --open",
-        "build": "npx parcel build src/index.html --out-dir prod --no-source-maps",
-        "deploy": "npm run build && vercel --prod",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "npx parcel build src/index.html --out-dir prod --no-source-maps"
     },
     "repository": {
         "type": "git",
