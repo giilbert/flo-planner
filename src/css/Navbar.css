@@ -22,18 +22,25 @@
     margin-left: 10px;
 }
 
-.Navbar a {
-    transition-property: font-size;
-    transition-duration: 100ms;
-}
-
-.Navbar a:hover {
-    font-size: 20px;
-}
-
 .logo {
     background-color: #4964ff63;
     padding: 10px;
+}
+
+.nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    border-bottom: #0000 none 0px;
+    background-color: #0000;
+    transition: border-bottom 100ms, background-color 100ms;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    border-bottom: #4174ff solid 4px;
+    background-color: #0001;
 }
 
 @media screen and (max-width: 800px) {

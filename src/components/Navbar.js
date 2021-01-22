@@ -26,9 +26,9 @@ export default class Navbar extends React.Component {
             }}>
                 <img src={Logo} width="37px" height="20px" className="logo" />
                 <div className="Navbar">
-                    <Link className="pointer" to="/">Dashboard</Link>
-                    <Link className="pointer" to="/calendar">Calendar</Link>
-                    <Link className="pointer" to="/events">Events</Link>
+                    <Link className="nav-item" to="/">Dashboard</Link>
+                    <Link className="nav-item" to="/calendar">Calendar</Link>
+                    <Link className="nav-item" to="/events">Events</Link>
                 </div>
 
                 <Time />
