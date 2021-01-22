@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Logo from '../res/flologo.png';
 import Time from './Time.js';
@@ -25,9 +26,9 @@ export default class Navbar extends React.Component {
             }}>
                 <img src={Logo} width="37px" height="20px" className="logo" />
                 <div className="Navbar">
-                    <p className="pointer" onClick={() => this.onClick(0)}>Dashboard</p>
-                    <p className="pointer" onClick={() => this.onClick(1)}>Calendar</p>
-                    <p className="pointer" onClick={() => this.onClick(2)}>Events</p>
+                    <Link className="pointer" to="/">Dashboard</Link>
+                    <Link className="pointer" to="/calendar">Calendar</Link>
+                    <Link className="pointer" to="/events">Events</Link>
                 </div>
 
                 <Time />

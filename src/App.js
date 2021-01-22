@@ -1,4 +1,9 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Time from './components/Time';
@@ -11,31 +16,18 @@ export default class App extends React.Component {
 
     constructor() {
         super()
-
-        this.state = {
-            page: 0 // 0 dashboard, 1 calendar, 2 upcoming events
-        }
-
-        this.changePage = this.changePage.bind(this)
-    }
-
-    changePage(x) {
-        if (x <= 2 && x >= 0) {
-            this.setState({
-                page: x
-            })
-        }
     }
 
     render() {
         return (
-            <>
-                <Navbar changePage={this.changePage} />
+            <Router>
+                <Navbar />
                 <Time big={true} />
-                {
-                    [<Dashboard />, 'calendar', 'events'][this.state.page]
-                }
-            </>
+
+                <Switch>
+                    <Route exact path="/" component={Dashboard} />
+                </Switch>
+            </Router>
         )
     }
 }

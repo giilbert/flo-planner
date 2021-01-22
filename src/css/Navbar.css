@@ -19,12 +19,12 @@
     margin-left: 10px;
 }
 
-.Navbar p {
+.Navbar a {
     transition-property: font-size;
     transition-duration: 100ms;
 }
 
-.Navbar p:hover {
+.Navbar a:hover {
     font-size: 20px;
 }
 
