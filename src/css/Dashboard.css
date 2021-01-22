@@ -11,7 +11,7 @@
     ); /* ... , navbar , bottom margin , middle margin , top margin*/
     min-height: calc(400px - 20px);
     background-color: var(--theme-blue);
-    border-radius: 4px;
+    border: #000a solid 2px;
     padding-top: 20px;
     text-align: center;
 }
@@ -29,7 +29,7 @@
     }
 
     .left-container {
-        width: 100%;
+        width: auto;
         height: 400px;
     }
 }

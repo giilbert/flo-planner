@@ -1,7 +1,11 @@
 .Navbar-container {
-    background-color: var(--theme-blue);
+    background-color: #0001;
     z-index: 999;
-    border-radius: 4px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    box-shadow: #0004 0px 4px 6px;
 }
 
 .Navbar-container .time-display {
@@ -9,7 +13,6 @@
 }
 
 .Navbar {
-    background-color: var(--theme-blue);
     height: 40px;
     width: 350px;
     display: flex;
@@ -29,15 +32,19 @@
 }
 
 .logo {
+    background-color: #4964ff63;
     padding: 10px;
-    background-color: var(--theme-blue);
-    border-radius: 4px;
 }
 
 @media screen and (max-width: 800px) {
+    .Navbar-container {
+        height: 40px;
+        box-shadow: #0004 0px 4px 6px;
+    }
+
     .Navbar {
+        width: calc(100% - 80px);
         margin: 0;
-        width: calc(100vw - 70px);
         position: absolute;
         top: 0px;
         left: 70px;
@@ -54,6 +61,5 @@
         border-radius: 0px;
         margin: 0px;
         padding: 10px;
-        padding-left: 20px;
     }
 }
