@@ -5,8 +5,9 @@
     background-color: #eee5;
     padding: 10px;
     margin: 10px;
-    border-radius: 4px;
     margin-top: 15px;
+    border-radius: 6px;
+    border: #111a solid 1px;
     position: relative;
     top: 0px;
     transition: top 100ms;
@@ -19,7 +20,8 @@
     top: -5px;
 }
 
-.event p, .event h1{
+.event p,
+.event h1 {
     overflow-wrap: break-word;
 }
 
@@ -79,7 +81,7 @@
         text-align: center;
         padding: 10px;
     }
-    
+
     .event-context-menu * svg {
         width: 40px;
         height: 40px;
