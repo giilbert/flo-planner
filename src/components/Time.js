@@ -1,46 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import '../css/Time.css';
 
-export default class Time extends React.Component {
-    constructor(props) {
-        super();
+export default function Time(props) {
+    const [date, setDate] = useState('');
 
-        this.props = props;
+    // component mounted
+    useEffect(() => {
+        let interval = setInterval(() => {
+            setDate(getFormattedDateString())
+        }, 1000);
 
-        this.state = {
-            date: ''
+        // component will unmounted
+        return () => {
+            clearInterval(interval)
         }
-    }
+    }, [])
 
-    tick() {
-        this.setState({
-            date: new Date().toLocaleDateString(undefined, {
-                weekday: 'short',
-                month: 'short', 
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric'
-            })
-        })
-    }
+    let extraClassName = props.big === true ? ' big' : '';
 
-    componentDidMount() {
-        this.interval = setInterval(() => this.tick(), 1000)
-    }
+    return (
+        <div className={"time-display" + extraClassName}>
+            <h4>{date}</h4>
+        </div>
+    )
+}
 
-    componentWillUnmount() {
-        clearInterval(this.interval)
-    }
-
-    render() {
-        let extraClassName = this.props.big == true ? ' big' : '';
-
-        return (
-            <div className={"time-display" + extraClassName}>
-                <h4>{this.state.date}</h4>
-            </div>
-        )
-    }
+const getFormattedDateString = () => {
+    return new Date().toLocaleDateString(undefined, {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    });
 }

@@ -12,22 +12,15 @@ import './css/index.css';
 import './css/fonts.css';
 import Dashboard from './pages/Dashboard';
 
-export default class App extends React.Component {
+export default function App() {
+    return (
+        <Router>
+            <Navbar />
+            <Time big={true} />
 
-    constructor() {
-        super()
-    }
-
-    render() {
-        return (
-            <Router>
-                <Navbar />
-                <Time big={true} />
-
-                <Switch>
-                    <Route exact path="/" component={Dashboard} />
-                </Switch>
-            </Router>
-        )
-    }
+            <Switch>
+                <Route exact path="/" component={Dashboard} />
+            </Switch>
+        </Router>
+    )
 }

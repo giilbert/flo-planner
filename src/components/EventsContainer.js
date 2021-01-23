@@ -1,60 +1,53 @@
-import React from 'react';
+import React, { useEffect, useReducer, useState } from 'react';
 
 import Event from './Event';
 
-import { events, addEventUpdateListener } from '../utils/events';
+import { events as eventData, addEventUpdateListener } from '../utils/events';
 
 import '../css/Event.css';
 
-export default class EventsContainer extends React.Component {
-    constructor(props) {
-        super(props);
 
-        // sort events
-        this.updateEvents()
+export default function EventsContainer() {
+    const [events, setEvents] = useState(eventData);
+    const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-        this.props = props;
-
+    useEffect(() => {
         addEventUpdateListener(() => {
-            this.updateEvents();
-            this.forceUpdate();
+            setEvents(updateEvents(events));
+            forceUpdate();
         })
-    }
+    }, [])
 
-    updateEvents() {
-        let sorted = events;
-        sorted = sorted.sort((a, b) => {
-            if (a.timestamp > b.timestamp) {
-                return 1;
-            } else if (b.timestamp > a.timestamp) {
-                return -1;
-            } else {
-                return 0;
-            }
-        })
+    return (
+        <div className="left-container">
+            <h1>Events</h1>
 
-        this.state = { events: sorted }
-    }
-
-    componentDidMount() {
-        this.forceUpdate();
-    }
-
-    render() {
-        return (
-            <div className="left-container">
-                <h1>Events</h1>
-
-                <div className="events-container">
-                    {this.state.events.map((v, i) => {
-                        return <Event 
-                            data={v} 
-                            key={i}
-                            tags={v.tags || null}
-                        />
-                    })}
-                </div>
+            <div className="events-container">
+                {events.map((v, i) => {
+                    return <Event
+                        data={v}
+                        key={i}
+                        tags={v.tags || null}
+                    />
+                })}
             </div>
-        )
-    }
+        </div>
+    )
+}
+
+const updateEvents = events => {
+    let sorted = events;
+    sorted = sorted.sort((a, b) => {
+        if (a.timestamp > b.timestamp) {
+            return 1;
+        } else if (b.timestamp > a.timestamp) {
+            return -1;
+        } else {
+            return 0;
+        }
+    });
+
+    console.log(sorted)
+
+    return sorted;
 }
