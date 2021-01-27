@@ -11,6 +11,7 @@ import Time from './components/Time';
 import './css/index.css';
 import './css/fonts.css';
 import Dashboard from './pages/Dashboard';
+import CreateEvent from './pages/CreateEvent';
 
 export default function App() {
     return (
@@ -20,6 +21,7 @@ export default function App() {
 
             <Switch>
                 <Route exact path="/" component={Dashboard} />
+                <Route exact path="/events/add" component={CreateEvent} />
             </Switch>
         </Router>
     )
