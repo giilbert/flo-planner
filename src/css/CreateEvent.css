@@ -6,6 +6,7 @@
 .create-event input {
     outline: none;
     font-size: 1.1rem;
+    width: 24rem;
     padding: 0.4rem;
     appearance: none;
     background-clip: padding-box;
@@ -25,16 +26,10 @@
 }
 
 .input-field {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .input-field .description {
     font-size: 0.9rem;
-}
-
-@media screen and (max-width: 800px) {
-    .create-event {
-        display: block;
-        justify-content: unset;
-    }
+    color: #000a;
 }
