@@ -29,6 +29,12 @@
     padding: 10px 20px 10px 20px;
 }
 
+.Navbar .add-button {
+    outline: none;
+    border: none;
+    font-size: 2rem;
+}
+
 .nav-item {
     height: 100%;
     display: flex;

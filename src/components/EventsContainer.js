@@ -5,7 +5,6 @@ import Event from './Event';
 import { events as eventData, addEventUpdateListener } from '../utils/events';
 
 import '../css/Event.css';
-import { Link } from 'react-router-dom';
 
 
 export default function EventsContainer() {
@@ -22,8 +21,6 @@ export default function EventsContainer() {
     return (
         <div className="left-container">
             <h1>Events</h1>
-
-            <Link to="/events/add">Add event</Link>
 
             <div className="events-container">
                 {events.map((v, i) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../res/flologo.png';
@@ -14,6 +14,7 @@ export default function Navbar() {
                 <Link className="nav-item" to="/">Dashboard</Link>
                 <Link className="nav-item" to="/calendar">Calendar</Link>
                 <Link className="nav-item" to="/events">Events</Link>
+                <Link className="nav-item add-button" to="/events/add">+</Link>
             </div>
 
             <Time />
