@@ -10,19 +10,45 @@
 }
 
 .create-event input,
-.create-event textarea {
+.create-event textarea,
+.date-input select {
     -webkit-appearance: none;
     outline: none;
     font-size: 1.1rem;
     width: 100%;
-    max-width: 24rem;
     min-height: 1.3rem;
-    padding: 0.4rem;
+    padding: 0.4rem 0.6rem;
     appearance: none;
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: box-shadow ease-in-out 50ms;
+}
+
+.date-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.date-input p {
+    font-size: 1.8rem;
+}
+
+.date-input select {
+    appearance: initial;
+    width: 7rem;
+}
+
+.date-input input[placeholder='Date'] {
+    width: 3rem;
+}
+
+.date-input input[placeholder='Year'] {
+    width: 5rem;
+}
+
+.date-input * {
+    margin-right: 10px;
 }
 
 .create-event textarea {

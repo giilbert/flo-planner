@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, createRef, useContext, useState } from 'react';
 
 import '../css/CreateEvent.css'
 
@@ -77,11 +77,7 @@ function Input({ name, placeholder, description, type = "text" }) {
             )
             break;
         case 'date':
-            input = <input
-                type="date"
-                onChange={updateState}
-                value="mm-dd-yyyy"
-            />
+            input = <DateInput name={name} />
             break;
         case 'time':
             input = <input
@@ -96,6 +92,50 @@ function Input({ name, placeholder, description, type = "text" }) {
             <label htmlFor={name}>{nameString}<br /></label>
             {input}
             <p className="description">{description}</p>
+        </div>
+    )
+}
+
+const DateInput = ({ name }) => {
+    const monthRef = createRef();
+    const dateRef = createRef();
+    const yearRef = createRef();
+    const { inputValues, setInputValues } = useContext(FormContext);
+
+    const updateState = () => {
+        const a = inputValues;
+        a[name] = {
+            month: monthRef.current.value,
+            date: dateRef.current.value,
+            year: yearRef.current.value,
+        };
+
+        setInputValues(a)
+    }
+
+    return (
+        <div className="date-input" onChange={updateState}>
+            <select ref={monthRef}>
+                <option>Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+            </select>
+
+            <input placeholder="Date" ref={dateRef} maxLength="2" />
+
+            <p>, </p>
+
+            <input placeholder="Year" ref={yearRef} maxLength="4" />
         </div>
     )
 }
