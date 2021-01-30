@@ -9,7 +9,8 @@
     max-width: 500px;
 }
 
-.create-event input,
+.create-event input[type='text'],
+.create-event input[type='number'],
 .create-event textarea,
 .date-input select {
     -webkit-appearance: none;
@@ -49,6 +50,46 @@
 
 .date-input * {
     margin-right: 10px;
+}
+
+.time-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.time-input p {
+    font-size: 1.8rem;
+}
+
+.time-input select {
+    appearance: initial;
+    width: 7rem;
+}
+
+.time-input input[placeholder='Hour'] {
+    width: 4rem;
+}
+
+.time-input input[placeholder='Minute'] {
+    width: 5rem;
+}
+
+.time-input * {
+    margin-right: 10px;
+}
+
+.time-input button {
+    background-color: #fff !important;
+    border: 1px solid #ced4da !important;
+    color: var(--font-color) !important;
+    margin-top: 0px !important;
+}
+
+input[type='checkbox'] {
+    border: 1px solid #ced4da !important;
+    width: 20px;
+    height: 20px;
+    position: relative;
 }
 
 .create-event textarea {
