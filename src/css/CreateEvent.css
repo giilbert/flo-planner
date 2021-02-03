@@ -1,142 +1,150 @@
 .create-event {
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 .create-event main {
-    width: 80%;
-    max-width: 500px;
+  width: 80%;
+  max-width: 500px;
 }
 
 .create-event input[type='text'],
 .create-event input[type='number'],
 .create-event textarea,
 .date-input select {
-    -webkit-appearance: none;
-    outline: none;
-    font-size: 1.1rem;
-    width: 100%;
-    min-height: 1.3rem;
-    padding: 0.4rem 0.6rem;
-    appearance: none;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: box-shadow ease-in-out 50ms;
+  -webkit-appearance: none;
+  outline: none;
+  font-size: 1.1rem;
+  width: 100%;
+  min-height: 1.3rem;
+  padding: 0.4rem 0.6rem;
+  appearance: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: box-shadow ease-in-out 50ms;
 }
 
 .date-input {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .date-input p {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .date-input select {
-    appearance: initial;
-    width: 7rem;
+  appearance: initial;
+  width: 7rem;
 }
 
 .date-input input[placeholder='Date'] {
-    width: 3rem;
+  width: 3rem;
 }
 
 .date-input input[placeholder='Year'] {
-    width: 5rem;
+  width: 5rem;
 }
 
 .date-input * {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .time-input {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .time-input p {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .time-input select {
-    appearance: initial;
-    width: 7rem;
+  appearance: initial;
+  width: 7rem;
 }
 
 .time-input input[placeholder='Hour'] {
-    width: 4rem;
+  width: 4rem;
 }
 
 .time-input input[placeholder='Minute'] {
-    width: 5rem;
+  width: 5rem;
 }
 
 .time-input * {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .time-input button {
-    background-color: #fff !important;
-    border: 1px solid #ced4da !important;
-    color: var(--font-color) !important;
-    margin-top: 0px !important;
+  background-color: #fff !important;
+  border: 1px solid #ced4da !important;
+  color: var(--font-color) !important;
+  margin-top: 0px !important;
 }
 
 input[type='checkbox'] {
-    border: 1px solid #ced4da !important;
-    width: 20px;
-    height: 20px;
-    position: relative;
+  border: 1px solid #ced4da !important;
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .create-event textarea {
-    height: 8rem;
-    resize: none;
+  height: 8rem;
+  resize: none;
 }
 
 .create-event input:focus,
 .create-event textarea:focus {
-    border-color: #78afff;
-    box-shadow: 0px 0px 0 0.25rem #a5d3ffbf;
+  border-color: #78afff;
+  box-shadow: 0px 0px 0 0.25rem #a5d3ffbf;
 }
 
 .create-event label {
-    font-size: 1.2rem;
-    margin-right: 10px;
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 .create-event button {
-    outline: none;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    appearance: none;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: box-shadow ease-in-out 50ms;
-    background-color: #4791ff;
-    color: #fff;
-    margin-top: 30px;
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  appearance: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: box-shadow ease-in-out 50ms;
+  background-color: #4791ff;
+  color: #fff;
+  margin-top: 30px;
 }
 
 .create-event button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .create-event button:focus {
-    border-color: #78afff;
-    box-shadow: 0px 0px 0 0.25rem #a5d3ffbf;
+  border-color: #78afff;
+  box-shadow: 0px 0px 0 0.25rem #a5d3ffbf;
 }
 
 .input-field {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .input-field .description {
-    font-size: 0.9rem;
-    color: #000a;
+  font-size: 0.9rem;
+  color: #000a;
+}
+
+.input-field .error {
+  color: #ff5858;
+}
+
+.input-field ol {
+  list-style-position: inside;
 }

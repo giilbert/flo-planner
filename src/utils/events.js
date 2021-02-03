@@ -5,11 +5,11 @@ let events = getAllEvents();
 
 
 function getAllEvents() {
-    let data = localStorage.getItem('events')
+  let data = localStorage.getItem('events')
 
-    if (!data) return [];
+  if (!data) return [];
 
-    return JSON.parse(data).data
+  return JSON.parse(data).data
 }
 
 /**
@@ -20,16 +20,16 @@ function getAllEvents() {
  * @param { Array<object> } data.tags
  */
 function addEvent(data) {
-    events.push(data)
-    localStorage.setItem('events', JSON.stringify(
-        {
-            data: events
-        }
-    ))
-    
-    listeners.forEach(v => {
-        v()
-    })
+  events.push(data)
+  localStorage.setItem('events', JSON.stringify(
+    {
+      data: events
+    }
+  ))
+
+  try {
+    listeners.forEach(v => v())
+  } catch { }
 }
 
 /* example:
@@ -57,43 +57,43 @@ a.addEvent({
  * @param { number } id id of the event
  */
 function removeEvent(id) {
-    let eventIndex = events.findIndex(e => e.id === id);
-    if (eventIndex === -1) throw new Error(`event with id ${id} does not exist!`);
-    
-    events.splice(eventIndex, 1);
+  let eventIndex = events.findIndex(e => e.id === id);
+  if (eventIndex === -1) throw new Error(`event with id ${id} does not exist!`);
 
-    // update in LS
-    localStorage.setItem('events', JSON.stringify(
-        {
-            data: events
-        }
-    ))
-    
-    listeners.forEach(v => {
-        v()
-    })
+  events.splice(eventIndex, 1);
+
+  // update in LS
+  localStorage.setItem('events', JSON.stringify(
+    {
+      data: events
+    }
+  ))
+
+  listeners.forEach(v => {
+    v()
+  })
 }
 
 
 let listeners = [];
 function addEventUpdateListener(callback) {
-    listeners.push(callback)
+  listeners.push(callback)
 }
 
 
 
 window.a = {
-    events,
-    getAllEvents,
-    addEvent,
-    removeEvent,
-    addEventUpdateListener
+  events,
+  getAllEvents,
+  addEvent,
+  removeEvent,
+  addEventUpdateListener
 }
 
 export {
-    events,
-    getAllEvents,
-    addEvent,
-    removeEvent,
-    addEventUpdateListener
+  events,
+  getAllEvents,
+  addEvent,
+  removeEvent,
+  addEventUpdateListener
 }
